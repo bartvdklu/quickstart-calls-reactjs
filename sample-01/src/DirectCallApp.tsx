@@ -1,5 +1,5 @@
 import { Route, Switch, useRouteMatch, Redirect } from "react-router-dom";
-import DirectCallLanding from "./components/pages/DirectCallLanding";
+// import DirectCallLanding from "./components/pages/DirectCallLanding";
 import DirectCallFullScreen from "./components/pages/DirectCallFullScreen";
 
 const DirectCallApp = () => {

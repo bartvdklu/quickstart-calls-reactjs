@@ -33,17 +33,17 @@ const FormContainer = styled.form`
   }
 `;
 
-const InputLabel = styled.label`
-  ${fonts.small};
-  ${fonts.heavy};
-  height: 12px;
-  display: inline-block;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  &:first-of-type {
-    margin-top: 38px;
-  }
-`;
+// const InputLabel = styled.label`
+//   ${fonts.small};
+//   ${fonts.heavy};
+//   height: 12px;
+//   display: inline-block;
+//   margin-top: 6px;
+//   margin-bottom: 6px;
+//   &:first-of-type {
+//     margin-top: 38px;
+//   }
+// `;
 
 const LoginButton = styled(Button)`
   ${fonts.normal};
@@ -54,7 +54,7 @@ const LoginButton = styled(Button)`
 `;
 
 interface LoginFormProps {}
-const LoginForm = (props: LoginFormProps) => {
+const LoginFormAdmin = (props: LoginFormProps) => {
   const sbCalls = useSbCalls();
   const history = useHistory();
   const query = new URLSearchParams(useLocation().search);
@@ -75,10 +75,12 @@ const LoginForm = (props: LoginFormProps) => {
   // const ROOM_ID = authArgs.room_id || '';
 
   const appId = APP_ID;
-  const userId = "PaperclipBezoeker";
+  const userId = "admin";
+  // const [accessToken, accessTokenInput] = useTextInput({ id: 'accessTokenInput', initValue: ACCESS_TOKEN });
 
   const login = () => {
     const option: AuthOption = { userId };
+    // if (IS_ACCESS_TOKEN_NEEDED || authArgs.access_token) option.accessToken = accessToken;
     sbCalls.init(appId);
     sbCalls.addDirectCallSound(SoundType.DIALING, '/sounds/Dialing.mp3');
     sbCalls.addDirectCallSound(SoundType.RINGING, '/sounds/Ringing.mp3');
@@ -111,4 +113,4 @@ const LoginForm = (props: LoginFormProps) => {
   );
 };
 
-export default LoginForm;
+export default LoginFormAdmin;

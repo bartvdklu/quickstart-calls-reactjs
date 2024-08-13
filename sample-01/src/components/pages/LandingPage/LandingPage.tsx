@@ -30,13 +30,15 @@ const LandingPage = () => {
           title: 'Direct Call',
           icon: '/icons/ic-direct-call-filled.svg',
           desc: 'Using a web application, make 1-to-1 voice and video calls on a full-screen or a widget.'
-        }, {
-          to: 'group-call',
-          title: 'Group Call',
-          icon: '/icons/ic-group-call-filled.svg',
-          desc: 'In Rooms, multiple users can come in to participate in group calls. '
-        }]}
-        />
+        },
+        // {
+        //   to: 'group-call',
+        //   title: 'Group Call',
+        //   icon: '/icons/ic-group-call-filled.svg',
+        //   desc: 'In Rooms, multiple users can come in to participate in group calls. '
+        // }
+      ]}
+        /> 
     </Wrapper>
   );
 }

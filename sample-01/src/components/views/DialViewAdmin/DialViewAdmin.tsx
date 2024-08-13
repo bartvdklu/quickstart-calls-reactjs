@@ -57,7 +57,7 @@ function getCallOption(callOption?: DirectCallOption) {
 
 
 interface DialViewProps {}
-const DialView: React.FC<DialViewProps> = props => {
+const DialViewAdmin: React.FC<DialViewProps> = props => {
   const sbCall = useSbCalls();
   const [userId, userIdInput] = useTextInput({ id: 'userIdInput', initValue: '', placeholder: 'Enter user ID' });
   const dial = (isVideoCall: boolean) => {
@@ -79,4 +79,4 @@ const DialView: React.FC<DialViewProps> = props => {
   );
 };
 
-export default DialView;
+export default DialViewAdmin;

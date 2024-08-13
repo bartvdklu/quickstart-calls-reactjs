@@ -8,19 +8,18 @@ import { ToastContainer, Flip } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './styles/toast.override.css';
 import LoginPage from 'components/pages/LoginPage';
-
-import GroupCallApp from './GroupCallApp';
+import LoginPageAdmin from 'components/pages/LoginPageAdmin';
 import DirectCallApp from './DirectCallApp';
-import LandingPage from './components/pages/LandingPage';
+// import LandingPage from './components/pages/LandingPage';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" component={LandingPage} />
+        {/* <Route exact path="/" component={LandingPage} /> */}
         <Route path="/direct-call" component={DirectCallApp} />
-        <Route path="/group-call" component={GroupCallApp} />
-        <Route path="/login" component={LoginPage} />
+        <Route exact path="/" component={LoginPage} />
+        <Route path="/admin" component={LoginPageAdmin} />
       </Switch>
 
       <ToastContainer
