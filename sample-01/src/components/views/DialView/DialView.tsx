@@ -8,7 +8,6 @@ import * as mixins from 'styles/mixins';
 import { media } from 'utils';
 
 const Wrapper = styled.div`
-
 `;
 
 const FormContainer = styled.div`
@@ -17,16 +16,13 @@ const FormContainer = styled.div`
   flex-direction: column;
   box-sizing: border-box;
   border: none;
-  
-  ${media.main} {
-    background-color: var(--white);
-  }
 `;
 
 const Title = styled.div`
   ${fonts.big};
   ${fonts.demi};
   margin-bottom: 16px;
+  color: var(--white);
 `;
 
 const ButtonsGroup = styled.div`
@@ -56,7 +52,7 @@ const DialView: React.FC<DialViewProps> = props => {
   return (
     <Wrapper>
       <FormContainer>
-        <Title className="">Make a call</Title>
+        <Title className="">Make a call to the future</Title>
         <ButtonsGroup>
           <AudioDialButton onClick={() => dial(false)} />
         </ButtonsGroup>

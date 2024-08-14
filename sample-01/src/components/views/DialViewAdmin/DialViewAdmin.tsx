@@ -17,16 +17,13 @@ const FormContainer = styled.div`
   flex-direction: column;
   box-sizing: border-box;
   border: none;
-  
-  ${media.main} {
-    background-color: var(--white);
-  }
 `;
 
 const Title = styled.div`
   ${fonts.big};
   ${fonts.demi};
   margin-bottom: 16px;
+  color: var(--white);
 `;
 
 const ButtonsGroup = styled.div`

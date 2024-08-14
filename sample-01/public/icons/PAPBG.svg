@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Line_Up" data-name="Line Up" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2000 2828.28">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#New_Pattern_11);
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-3 {
+        fill: #d6ff43;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-5 {
+        fill: #f76fd4;
+      }
+
+      .cls-6 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <pattern id="New_Pattern_11" data-name="New Pattern 11" x="0" y="0" width="252" height="252" patternTransform="translate(-2051.91 2747.9)" patternUnits="userSpaceOnUse" viewBox="0 0 252 252">
+      <g>
+        <rect class="cls-2" width="252" height="252"/>
+        <path class="cls-3" d="M252,0v252H0V0h252ZM250,115V12c0-5.52-4.48-10-10-10h-103c-5.52,0-10,4.48-10,10v103c0,5.52,4.48,10,10,10h103c5.52,0,10-4.48,10-10ZM115,2H12C6.48,2,2,6.48,2,12v103c0,5.52,4.48,10,10,10h103c5.52,0,10-4.48,10-10V12c0-5.52-4.48-10-10-10ZM2,137v103c0,5.52,4.48,10,10,10h103c5.52,0,10-4.48,10-10v-103c0-5.52-4.48-10-10-10H12c-5.52,0-10,4.48-10,10ZM137,250h103c5.52,0,10-4.48,10-10v-103c0-5.52-4.48-10-10-10h-103c-5.52,0-10,4.48-10,10v103c0,5.52,4.48,10,10,10Z"/>
+      </g>
+    </pattern>
+    <linearGradient id="linear-gradient" x1="2808.19" y1="14552.03" x2="2808.19" y2="14313.37" gradientTransform="translate(-1807.94 -11723.49)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d6ff43" stop-opacity="0"/>
+      <stop offset=".11" stop-color="rgba(204, 236, 85, .1)" stop-opacity=".1"/>
+      <stop offset=".34" stop-color="rgba(181, 189, 131, .34)" stop-opacity=".34"/>
+      <stop offset=".67" stop-color="rgba(144, 114, 205, .74)" stop-opacity=".74"/>
+      <stop offset=".87" stop-color="#7740ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="1000.25" y1="-46.21" x2="1000.25" y2="-439.47" gradientTransform="translate(0 439.73)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d6ff43" stop-opacity="0"/>
+      <stop offset=".12" stop-color="rgba(204, 236, 85, .1)" stop-opacity=".1"/>
+      <stop offset=".36" stop-color="rgba(181, 189, 131, .34)" stop-opacity=".34"/>
+      <stop offset=".72" stop-color="rgba(144, 114, 205, .74)" stop-opacity=".74"/>
+      <stop offset=".95" stop-color="#7740ff"/>
+    </linearGradient>
+  </defs>
+  <rect class="cls-5" x=".25" y=".26" width="2000" height="2828.28"/>
+  <rect class="cls-1" x=".25" y=".26" width="2000" height="2828.28"/>
+  <rect class="cls-4" x="-.79" y="2589.88" width="2002.08" height="238.66" transform="translate(2000.49 5418.42) rotate(180)"/>
+  <rect class="cls-6" x="-.79" y=".26" width="2002.08" height="393.26"/>
+</svg>
