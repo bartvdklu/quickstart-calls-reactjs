@@ -1,17 +1,17 @@
 import { Route, Switch, useRouteMatch, Redirect } from "react-router-dom";
 // import DirectCallLanding from "./components/pages/DirectCallLanding";
-import DirectCallFullScreen from "./components/pages/DirectCallFullScreen";
+import DirectCallFullScreenAdmin from "./components/pages/DirectCallFullScreenAdmin";
 
-const DirectCallApp = () => {
+const DirectCallAppAdmin = () => {
     const { path } = useRouteMatch();
 
     return (
         <Switch>
-            <Route exact path={`${path}/full-screen`} component={DirectCallFullScreen} />
+            <Route exact path={`${path}/full-screen`} component={DirectCallFullScreenAdmin} />
             <Redirect to={`${path}/full-screen`} />
             {/*<Route exact path={path} component={DirectCallLanding} />*/}
         </Switch>
     );
 }
 
-export default DirectCallApp;
+export default DirectCallAppAdmin;

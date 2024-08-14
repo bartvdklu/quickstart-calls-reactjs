@@ -3,8 +3,8 @@ import {useHistory, useLocation, useRouteMatch} from "react-router-dom";
 import {useEffect, useMemo} from "react";
 import Header from "../../organisms/Header";
 import Authenticator from "../../../containers/Authenticator";
-import CallView from "../../views/CallView";
-import DialView from "../../views/DialView";
+import CallViewAdmin from "../../views/CallViewAdmin";
+import DialViewAdmin from "../../views/DialViewAdmin";
 import styled from "styled-components";
 import {media} from "../../../utils";
 import Screen from "../../templates/Screen/Screen";
@@ -29,9 +29,9 @@ const Contents = styled(Screen)`
   }
 `;
 
-interface DirectCallMainProps {
+interface DirectCallMainAdminProps {
 }
-const DirectCallMain: React.FC<DirectCallMainProps> = ({ children }) => {
+const DirectCallMainAdmin: React.FC<DirectCallMainAdminProps> = ({ children }) => {
     const { isAuthenticated, calls } = useSbCalls();
     const history = useHistory();
     const location = useLocation();
@@ -39,9 +39,9 @@ const DirectCallMain: React.FC<DirectCallMainProps> = ({ children }) => {
     const { path, url } = useRouteMatch();
 
     useEffect(() => {
-        if (location.pathname === `${url}/`) {
+        if (location.pathname === `${url}/admin`) {
             if (isAuthenticated) {
-                history.replace('/');
+                history.replace('/admin');
             }
         }
     }, [isAuthenticated, location.pathname]);
@@ -59,13 +59,13 @@ const DirectCallMain: React.FC<DirectCallMainProps> = ({ children }) => {
 
     return (
         <Wrapper>
-            {!!calls.length && <CallView call={calls[calls.length - 1]}/>}
+            {!!calls.length && <CallViewAdmin call={calls[calls.length - 1]}/>}
             {/* {header} */}
             <Contents>
-                <DialView />
+                <DialViewAdmin />
                 {onCall &&
                 <Overlay>
-                  <CallView call={onCall} />
+                  <CallViewAdmin call={onCall} />
                 </Overlay>
                 }
             </Contents>
@@ -73,4 +73,4 @@ const DirectCallMain: React.FC<DirectCallMainProps> = ({ children }) => {
     );
 };
 
-export default DirectCallMain;
+export default DirectCallMainAdmin;

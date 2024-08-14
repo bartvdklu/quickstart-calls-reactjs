@@ -4,7 +4,6 @@ import * as fonts from 'styles/fonts';
 import * as mixins from 'styles/mixins';
 import { media } from 'utils';
 
-import Logo from 'components/atoms/Logo';
 import LoginForm from 'components/organisms/LoginForm';
 import Screen from 'components/templates/Screen';
 
@@ -58,8 +57,7 @@ const LoginPage = () => {
   return (
     <Wrapper>
       <Content>
-        <Logo size="mid" />
-        <Title>Sendbird Calls</Title>
+        <Title>Login scherm Paperclip Bezoeker</Title>
         <LoginForm />
       </Content>
       <VersionInfo>

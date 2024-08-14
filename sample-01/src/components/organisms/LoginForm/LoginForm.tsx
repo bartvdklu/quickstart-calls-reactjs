@@ -5,45 +5,12 @@ import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
 
 import Button from 'components/atoms/Button';
-import Input, { useTextInput } from 'components/atoms/Input';
 import { useSbCalls } from 'lib/sendbird-calls';
 import { SoundType } from 'sendbird-calls';
 import type { AuthOption } from 'sendbird-calls';
 import { toast } from 'react-toastify';
 import storage from 'lib/storage';
 import * as fonts from 'styles/fonts';
-
-import { media } from 'utils';
-
-const FormContainer = styled.form`
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 24px;
-  background-color: var(--white);
-  
-  ${Input} {
-    margin-bottom: 16px;
-  }
-  
-  ${media.main} {
-    max-width: 500px;
-    border: solid 1px #dee2f2;
-    border-radius: 4px;
-    padding: 0 48px;
-  }
-`;
-
-const InputLabel = styled.label`
-  ${fonts.small};
-  ${fonts.heavy};
-  height: 12px;
-  display: inline-block;
-  margin-top: 6px;
-  margin-bottom: 6px;
-  &:first-of-type {
-    margin-top: 38px;
-  }
-`;
 
 const LoginButton = styled(Button)`
   ${fonts.normal};
@@ -99,7 +66,7 @@ const LoginForm = (props: LoginFormProps) => {
   }, [])
 
   return (
-    <FormContainer>
+    <>
       <LoginButton
         primary
         size="mid"
@@ -107,7 +74,7 @@ const LoginForm = (props: LoginFormProps) => {
       >
         Sign in
       </LoginButton>
-    </FormContainer>
+    </>
   );
 };
 

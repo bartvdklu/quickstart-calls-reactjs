@@ -10,6 +10,7 @@ import './styles/toast.override.css';
 import LoginPage from 'components/pages/LoginPage';
 import LoginPageAdmin from 'components/pages/LoginPageAdmin';
 import DirectCallApp from './DirectCallApp';
+import DirectCallAppAdmin from './DirectCallAppAdmin';
 // import LandingPage from './components/pages/LandingPage';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Switch>
         {/* <Route exact path="/" component={LandingPage} /> */}
         <Route path="/direct-call" component={DirectCallApp} />
+        <Route path="/admin/direct-call" component={DirectCallAppAdmin} />
         <Route exact path="/" component={LoginPage} />
         <Route path="/admin" component={LoginPageAdmin} />
       </Switch>
