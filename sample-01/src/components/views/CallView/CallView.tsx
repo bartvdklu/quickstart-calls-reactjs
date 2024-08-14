@@ -77,16 +77,16 @@ const PeerMuteLabel = styled.div`
   color: var(--white);
 `;
 
-// const Background = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   overflow: hidden;
-//   position: absolute;
-//   border-radius: 8px;
-//   ${media.main} {
-//     border-radius: 0;
-//   }
-// `;
+const Background = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 8px;
+  ${media.main} {
+    border-radius: 0;
+  }
+`;
 
 type MediaViewSize = 'hidden' | 'small' | 'full';
 const getVideoStyleFromSize = (size: MediaViewSize) => {
@@ -119,19 +119,6 @@ const getVideoStyleFromSize = (size: MediaViewSize) => {
   }
 };
 
-// const VideoViewDiv = styled.div<{ size: MediaViewSize }>`
-//   position: absolute;
-//   overflow: hidden;
-//   ${props => getVideoStyleFromSize(props.size)}
-// `;
-
-// const VideoView = styled.video`
-//   left: 50%;
-//   height: 100%;
-//   position: absolute;
-//   transform: translate(-50%);
-// `;
-
 const Controls = styled.div`
   ${mixins.flexCenter};
   position: absolute;
@@ -140,20 +127,6 @@ const Controls = styled.div`
     position: relative;
   }
 `;
-
-// const CloseButton = styled.button`
-//   ${fonts.normal};
-//   border: none;
-//   width: 248px;
-//   height: 48px;
-//   color: var(--white);
-//   background: rgba(255, 255, 255, 0.08);
-//   border-radius: 4px;
-//   margin-bottom: 28px;
-//   &:hover {
-//     background: rgba(255, 255, 255, 0.28);
-//   }
-// `;
 
 interface CallViewProps { call: StatefulDirectCall; }
 const CallView: React.FC<CallViewProps> = ({ call }) => {
@@ -171,13 +144,13 @@ const CallView: React.FC<CallViewProps> = ({ call }) => {
     remoteMediaView,
   } = call;
 
-  // const localMediaViewRef = useCallback(node => {
-  //   call.setLocalMediaView(node);
-  // }, []);
+  const localMediaViewRef = useCallback(node => {
+    call.setLocalMediaView(node);
+  }, []);
 
-  // const remoteMediaViewRef = useCallback(node => {
-  //   call.setRemoteMediaView(node);
-  // }, []);
+  const remoteMediaViewRef = useCallback(node => {
+    call.setRemoteMediaView(node);
+  }, []);
 
   const accept = useCallback(() => {
     call.accept({
@@ -216,6 +189,21 @@ const CallView: React.FC<CallViewProps> = ({ call }) => {
 
   return (
     <Wrapper>
+      <Background>
+        <audio
+          ref={localMediaViewRef}
+          playsInline
+          autoPlay
+          muted
+        />
+        <audio
+          ref={remoteMediaViewRef}
+          playsInline
+          autoPlay
+          muted={false}
+          controls={isSafari()}
+        />
+      </Background>
       <Foreground>
         {
           remoteUser.profileUrl && <PeerProfile src={remoteUser.profileUrl || ''} alt="Sendbird voice & video call opponent profile photo" />

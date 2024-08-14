@@ -11,7 +11,7 @@ import { useSbCalls } from 'lib/sendbird-calls';
 import type { StatefulDirectCall } from 'lib/sendbird-calls';
 import * as fonts from 'styles/fonts';
 import * as mixins from 'styles/mixins';
-import { media } from 'utils';
+import { isSafari, media } from 'utils';
 
 const Wrapper = styled(Screen)`
  ${mixins.flexCenter};
@@ -22,6 +22,17 @@ const Wrapper = styled(Screen)`
  z-index: 1; // TODO: Temporary z-index because of menu dropdown coming upfront
  color: white;
  background-color: var(--navy-900);
+`;
+
+const Background = styled.div`
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  border-radius: 8px;
+  ${media.main} {
+    border-radius: 0;
+  }
 `;
 
 const Foreground = styled.div`
@@ -142,6 +153,15 @@ const CallViewAdmin: React.FC<CallViewAdminProps> = ({ call }) => {
   let localMediaViewSize: MediaViewSize;
   let remoteMediaViewSize: MediaViewSize;
 
+  const remoteMediaViewRef = useCallback(node => {
+    call.setRemoteMediaView(node);
+  }, []);
+
+  const localMediaViewRef = useCallback(node => {
+    call.setLocalMediaView(node);
+  }, []);
+
+
   switch (callState) {
     case 'dialing':
     case 'ringing':
@@ -165,6 +185,21 @@ const CallViewAdmin: React.FC<CallViewAdminProps> = ({ call }) => {
 
   return (
     <Wrapper>
+      <Background>
+        <audio
+          ref={localMediaViewRef}
+          playsInline
+          autoPlay
+          muted
+        />
+        <audio
+          ref={remoteMediaViewRef}
+          playsInline
+          autoPlay
+          muted={false}
+          controls={isSafari()}
+        />
+      </Background>
       <Foreground>
         {
           remoteUser.profileUrl && <PeerProfile src={remoteUser.profileUrl || ''} alt="Sendbird voice & video call opponent profile photo" />
