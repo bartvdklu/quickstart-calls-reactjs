@@ -208,7 +208,7 @@ const CallView: React.FC<CallViewProps> = ({ call }) => {
         {
           remoteUser.profileUrl && <PeerProfile src={remoteUser.profileUrl || ''} alt="Sendbird voice & video call opponent profile photo" />
         }
-        <PeerName>{remoteUser.nickname || remoteUser.userId}</PeerName>
+        <PeerName>The Future</PeerName>
         {
           isNot(...connectedStates)
           && (
@@ -223,10 +223,10 @@ const CallView: React.FC<CallViewProps> = ({ call }) => {
           {
             is(...connectedStates) && !isRemoteAudioEnabled && (
               <>
-                <PeerMuteIcon />
-                <PeerMuteLabel>
-                  {remoteUser.userId} audio muted this call
-                </PeerMuteLabel>
+                {/* <PeerMuteIcon /> */}
+                {/* <PeerMuteLabel>
+                  The future muted this call
+                </PeerMuteLabel> */}
               </>
             )
           }
@@ -236,8 +236,8 @@ const CallView: React.FC<CallViewProps> = ({ call }) => {
           {
             isNot('ended') && ([
               isLocalAudioEnabled
-                ? <MuteButton key="mute-audio" onClick={() => call.muteMicrophone()} />
-                : <UnmuteButton key="unmute-audio" onClick={() => call.unmuteMicrophone()} />,
+                // ? <MuteButton key="mute-audio" onClick={() => call.muteMicrophone()} />
+                // : <UnmuteButton key="unmute-audio" onClick={() => call.unmuteMicrophone()} />,
             ])
           }
           {
